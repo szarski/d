@@ -12,6 +12,7 @@ For default command if defined:
 
 Available commands:
   console         -> docker compose -f .devcontainer/docker-compose.yml exec -it my_app bash
+  build           -> docker build --secret id=hex_auth_token,src=/Users/jacek/.secrets/hex_key.txt --secret id=node_auth_token,env=GITHUB_TOKEN -t test-image .
   pss             -> docker compose -f .devcontainer/docker-compose.yml ps --format 'table {{.Service}}\t{{.Status}}'
   test            -> mix test
   (default)       -> docker compose -f .devcontainer/docker-compose.yml
