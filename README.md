@@ -16,14 +16,26 @@ Available commands:
   pss             -> docker compose -f .devcontainer/docker-compose.yml ps --format 'table {{.Service}}\t{{.Status}}'
   test            -> mix test
   (default)       -> docker compose -f .devcontainer/docker-compose.yml
+```
 
+```
 my_app % d up -d
 [+] Running 1/1
  ✔ Container devcontainer-my_app-1  Started  0.2s
+```
 
+```
 my_app % d pss
 SERVICE   STATUS
 my_app    Up 11 seconds
+```
+
+```
+my_app % d build
+[+] Building 6.3s (38/46)                              docker:desktop-linux
+ => [internal] load build definition from Dockerfile   0.0s
+ => => transferring dockerfile: 4.85kB
+ ...
 ```
 
 ## Usage
