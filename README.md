@@ -1,6 +1,29 @@
 ## D (Developer Helper)
 
 Simple script for defining cusom commands per repository.
+Do you work on multiple repositories, each with a slightly different docker configuration?
+Simplify your work by having one pattern for invoking typical actions:
+```
+my_app % d
+Usage:
+  d <command> [args...]
+For default command if defined:
+  d [args...]
+
+Available commands:
+  console         -> docker compose -f .devcontainer/docker-compose.yml exec -it my_app bash
+  pss             -> docker compose -f .devcontainer/docker-compose.yml ps --format 'table {{.Service}}\t{{.Status}}'
+  test            -> mix test
+  (default)       -> docker compose -f .devcontainer/docker-compose.yml
+
+my_app % d up -d
+[+] Running 1/1
+ ✔ Container devcontainer-my_app-1  Started  0.2s
+
+my_app % d pss
+SERVICE   STATUS
+my_app    Up 11 seconds
+```
 
 ## Usage
 
